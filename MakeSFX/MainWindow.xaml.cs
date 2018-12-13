@@ -279,6 +279,9 @@ namespace MakeSFX
             Process.Start("hh.exe", "mk:@MSITStore:" + helpFileName + "::/examples.html");
         }
 
+        /// <summary>
+        /// Reverse the file name from wetpussy.jpg.exe to exe.gpj.wetpussy
+        /// </summary>
         private void Reverse()
         {
             if (tbxOutName.Text.Length == 0)
