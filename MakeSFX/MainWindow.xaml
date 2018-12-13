@@ -1,0 +1,73 @@
+﻿<Window x:Class="MakeSFX.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MakeSFX"
+        mc:Ignorable="d"
+        Title="MakeSFX" Height="600" Width="800" AllowDrop="True" ToolTip="Перетащите сюда файлы" Drop="dgFiles_Drop" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown" Closed="Window_Closed">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Grid.Row="0" Name="dgFiles" Margin="5,5,5,5" ItemsSource="{Binding}" SelectionMode="Single" IsReadOnly="True" AutoGenerateColumns="False" CanUserReorderColumns="True" >
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding executable}" Value="True">
+                            <Setter Property="FontWeight" Value="Bold"></Setter>
+                            <Setter Property="Background" Value="LightGray"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding executable}" Value="False">
+                            <Setter Property="FontWeight" Value="Normal"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Относительный Путь" Binding="{Binding relativePath}" Width="auto"/>
+                <DataGridTextColumn Header="Исполняемый" Binding="{Binding executable}" Width="auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="106"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="Запустить файл" Margin="5,5,5,5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <ComboBox Grid.Column="1" Grid.Row="0" Name="cmbxStart" Margin="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Stretch" ItemsSource="{Binding}" SelectionChanged="cmbxStart_SelectionChanged"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="106"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Иконка" Margin="5,5,5,5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBox Grid.Column="1" Name="tbxIcon" Margin="5,5,5,5" IsReadOnly="True" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+            <Button Grid.Column="2" Name="btnBrowseIcon" Margin="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnBrowseIcon_Click">Обзор</Button>
+        </Grid>
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <TextBlock Text="Конфиг sfx модуля" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Name="btnCFG_Help" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnCFG_Help_Click">?</Button>
+        </StackPanel>
+        <TextBox Grid.Row="4" Name="tbxCFG" Margin="5,5,5,5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" TextWrapping="Wrap" Height="100" AutoWordSelection="True" AcceptsTab="True" AcceptsReturn="True"/>
+        <TextBox Grid.Row="5" Name="tbxOutName" Margin="5,5,5,5" Text="MyFile.exe" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+        <Button Grid.Row="6" Name="btnMakeSFX" Margin="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnMakeSFX_Click">Создать</Button>
+    </Grid>
+</Window>

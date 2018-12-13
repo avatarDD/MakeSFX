@@ -1,0 +1,17 @@
+C:\123\MakeSFX\MakeSFX\bin\Debug\MakeSFX.exe
+C:\123\MakeSFX\MakeSFX\bin\Debug\MakeSFX.pdb
+C:\123\MakeSFX\MakeSFX\obj\Debug\MakeSFX.csprojAssemblyReference.cache
+C:\123\MakeSFX\MakeSFX\obj\Debug\MainWindow.g.cs
+C:\123\MakeSFX\MakeSFX\obj\Debug\App.g.cs
+C:\123\MakeSFX\MakeSFX\obj\Debug\MakeSFX_MarkupCompile.cache
+C:\123\MakeSFX\MakeSFX\obj\Debug\MakeSFX_MarkupCompile.lref
+C:\123\MakeSFX\MakeSFX\obj\Debug\MainWindow.baml
+C:\123\MakeSFX\MakeSFX\obj\Debug\MakeSFX.g.resources
+C:\123\MakeSFX\MakeSFX\obj\Debug\MakeSFX.Properties.Resources.resources
+C:\123\MakeSFX\MakeSFX\obj\Debug\MakeSFX.csproj.GenerateResource.cache
+C:\123\MakeSFX\MakeSFX\obj\Debug\MakeSFX.csproj.CoreCompileInputs.cache
+C:\123\MakeSFX\MakeSFX\obj\Debug\MakeSFX.exe
+C:\123\MakeSFX\MakeSFX\obj\Debug\MakeSFX.pdb
+C:\123\MakeSFX\MakeSFX\bin\Debug\MakeSFX.exe.config
+C:\123\MakeSFX\MakeSFX\bin\Debug\SevenZipSharp.dll
+C:\123\MakeSFX\MakeSFX\obj\Debug\MakeSFX.csproj.CopyComplete
